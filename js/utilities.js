@@ -47,3 +47,7 @@ function totalCartPrice(){
     document.getElementById('total-amount').innerText = totalAmount;
 
 }
+//checkout button
+document.getElementById('check-out').addEventListener('click',function(){
+    alert('এখনো তোমার iPhone📱 কিনার বয়স হয় নাই বাবু👶')
+})
