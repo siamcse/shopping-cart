@@ -23,3 +23,27 @@ function updateTotalPrice(priceId,unitNumber,unitPrice){
     
     previousPriceElement.innerText = unitPrice * unitNumber; 
 }
+
+function getTextElementById(elementId){
+    const totalPriceElement = document.getElementById(elementId);
+    const totalPrice = parseInt(totalPriceElement.innerText);
+    return totalPrice;
+}
+
+function totalCartPrice(){
+    const phonePrice = getTextElementById('phone-price');
+    const casePrice = getTextElementById('case-price');
+
+    const subTotalElement = document.getElementById('sub-total');
+    const subTotalPrice = phonePrice + casePrice;
+    subTotalElement.innerText = subTotalPrice;
+
+    //tax price 10%
+    const taxPrice = parseFloat((subTotalPrice * 0.15).toFixed(2));
+    //set tax price
+    document.getElementById('tax-total').innerText = taxPrice;
+    //set total amount
+    const totalAmount = subTotalPrice + taxPrice;
+    document.getElementById('total-amount').innerText = totalAmount;
+
+}
